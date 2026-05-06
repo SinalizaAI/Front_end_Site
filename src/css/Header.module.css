@@ -172,8 +172,8 @@
   width: 60%;
   max-width: 320px;
   height: 100vh;
-  border-radius: 47px 0px 0px 47px;
-  background-color: var(--azul_n); /* ← era --azul_escuro */
+  border-radius: 20px 0px 0px 20px;
+  background-color: var(--azul_claro); /* ← era --azul_escuro */
   z-index: 99;
   padding-top: 100px;
   transform: translateX(100%);
@@ -210,7 +210,7 @@
   height: 44px;
   border-radius: 47px;
   background-color: var(--amarelo);
-  color: var(--azul_n); /* ← era --azul_escuro */
+  color: var(--azul_escuro); /* ← era --azul_escuro */
   font-family: var(--fonte_inter); /* ← era --fonte_Jakarta */
   font-size: 18px;
   font-weight: 500;
@@ -221,7 +221,7 @@
 
 .drawer_nav .button:hover {
   background-color: var(--branco_puro);
-  color: var(--azul_n); /* ← era --azul_escuro */
+  color: var(--azul_escuro); /* ← era --azul_escuro */
   transition: 0.1s;
   cursor: pointer;
 }

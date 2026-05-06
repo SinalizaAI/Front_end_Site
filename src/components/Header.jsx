@@ -75,6 +75,9 @@ function Header() {
           <Link to="/" onClick={() => scrollToSection("funciona")}>
             Como funciona
           </Link>
+          <Link to={"/PlanosCompletos"} onClick={() => setMenuAberto(false)}>
+            Planos
+          </Link>
           <Link to={"/pages/Sobre_Equipe"} onClick={() => setMenuAberto(false)}>
             Sobre nós
           </Link>

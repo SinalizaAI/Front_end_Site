@@ -2,9 +2,9 @@ import Hero from "../components/Hero";
 import Section_funcionalidades from "../components/Section_funcionalidades";
 import Vantagens from "../components/Vantagens";
 import Como_Funciona from "../components/Como_Funciona";
-import Planos from "../components/Planos";
 import Perguntas from "../components/Perguntas";
 import Fale from "../components/Fale";
+import Mascote from "../components/Mascote";
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
       <Section_funcionalidades />
       <Vantagens />
       <Como_Funciona />
-      <Planos />
+      <Mascote />
       <Perguntas />
       <Fale />
     </main>

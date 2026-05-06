@@ -14,7 +14,9 @@
   --amarelo: #f5b942;
   --cinza: #2b373f;
   --branco_puro: #ffff;
-  --branco: #e8f4ff;
+  --branco: rgba(233, 239, 242, 1);
+  --azul_oc: #345f7a;
+  --preto: #000;
   --fonte_lexend: "Lexend";
   --fonte_inter: "Inter";
 }
