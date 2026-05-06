@@ -11,22 +11,32 @@
 }
 
 .main h1 {
-    font-family: var(--fonte_Prosto);
+    font-family: var(--fonte_lexend);
+    font-weight: normal;
     color: var(--azul_claro);
     font-size: 50px;
+}
+
+.p1 {
+    width: 703px;
+    font-family: var(--fonte_inter);
+    text-align: center;
+    margin-top: 40px;
 }
 
 .section {
     width: 976.7px;;
     height: 538.14px;
     background-color: aquamarine;
-    margin-top: 88px;
+    margin-top: 40px;
     border: 1px black solid;
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
 }
 
 .section h2 {
-    font-family: var(--fonte_Prosto);
+    font-family: var(--fonte_lexend);
 }
 
 .bem_vindo {
@@ -38,34 +48,154 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     padding-top: 137px;
     gap: 24px;
 }
 
 .bem_vindo h2 {
+    width: 290px;
     color: var(--azul_claro);
 }
 
 .bem_vindo p {
+    width: 200px;
     color: var(--azul_escuro);
+    font-size: 25px;
+    font-family: var(--fonte_inter);
 }
 
-.bem_vindo a {
+.btn {
     width: 286px;
     height: 50px;
     background-color: var(--azul_escuro);
     font-size: 20px;
-    font-family: var(--fonte_Jakarta);
+    font-family: var(--fonte_inter);
     color: white;
     text-decoration: none;
     border-radius: 47px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 143px;
+    margin-top: 79px;
 }
 
-.bem_vindo a:hover {
+.btn:hover {
+    background-color: var(--amarelo);
+    color: var(--azul_escuro);
+    border: 1px solid var(--azul_escuro);
+    transition: 0.1s;
+}
+
+
+.entrar_conta {
+    width: 50%;
+    height: 100%;
+    background-color: var(--azul_claro);
+    border-radius: 0px 20px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 48px;
+}
+
+.entrar_conta form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.entrar_conta h2 {
+    color: white;
+    font-family: var(f);
+}
+
+.entrar {
+    font-family: var(--fonte_inter);
+    color: white;
+}
+
+.escrever {
+    width: 451px;
+    height: 54px;
+    border-radius: 20px;
+    margin-top: 25px;
+    padding-left: 15px;
+    background-color: var(--branco);
+    display: flex;
+}
+
+.escrever img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+.escrever input {
+    width: 85%;
+    font-size: 20px;
+    font-family: var(--fonte_inter);
+    background-color: transparent;
+    outline: none;
+    padding-left: 15px;
+}
+
+.manter_conectado {
+    width: 370px;
+    color: white;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.manter_conectado label {
+    display: flex;
+    gap: 8px;
+}
+
+.manter_conectado input:hover {
+    cursor: pointer;
+}
+
+.manter {
+    font-size: 15px;
+    font-family: var(--fonte_inter);
+}
+
+.conectado {
+    font-size: 15px;
+    font-family: var(--fonte_inter);
+    color: var(--amarelo);
+    text-decoration: none;
+}
+
+.conectado:hover {
+    color: var(--branco);
+}
+
+.btn2 {
+    width: 286px;
+    height: 50px;
+    background-color: var(--amarelo);
+    font-size: 20px;
+    font-family: var(--fonte_inter);
+    color: black;
+    text-decoration: none;
+    border-radius: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22px;
+    border: 1px solid var(--azul_escuro);
+}
+
+.btn2:hover {
     background-color: white;
     color: var(--azul_escuro);
+    cursor: pointer;
+    transition: 0.1s;
 }

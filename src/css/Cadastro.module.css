@@ -64,7 +64,7 @@
     font-size: 25px;
     font-family: var(--fonte_inter);
 }
-
+c
 .btn {
     width: 286px;
     height: 50px;
@@ -109,7 +109,7 @@
 
 .crie_conta h2 {
     color: white;
-    font-family: var(f);
+    font-family: var(--fonte_lexend);
 }
 
 .cadastre {
