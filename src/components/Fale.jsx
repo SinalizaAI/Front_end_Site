@@ -8,14 +8,6 @@ function Fale() {
       <div className={styles.container}>
         <div className={styles.div1}>
           <div className={styles.texts}>
-            <h2>Contato</h2>
-            <p>
-              Entre em contato para tirar suas dúvidas conosco sobre nossos
-              produtos e serviços.
-            </p>
-          </div>
-
-          <div className={styles.texts}>
             <h2>Endereço</h2>
             <p>Rua Tito 54, Lapa, São Paulo</p>
           </div>
@@ -28,6 +20,12 @@ function Fale() {
           <div className={styles.texts}>
             <h2>E-mail</h2>
             <p>Sinalizaai@gmail.com</p>
+          </div>
+          <div className={styles.mapa}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1227833051876!2d-46.69433512489202!3d-23.52808587882268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef8775663b04f%3A0x923835e9005f8309!2sSenac%20Lapa%20Tito!5e0!3m2!1spt-BR!2sbr!4v1778101152979!5m2!1spt-BR!2sbr"
+              width="600"
+            ></iframe>
           </div>
         </div>
 
@@ -70,12 +68,7 @@ function Fale() {
 
             <div className={styles.container_form}>
               <label htmlFor="mensagem">Mensagem</label>
-              <textarea
-                id="mensagem"
-                name="mensagem"
-                rows={6}
-                required
-              />
+              <textarea id="mensagem" name="mensagem" rows={6} required />
             </div>
 
             <div className={styles.btn}>

@@ -1,5 +1,7 @@
 import styles from "../css/Footer.module.css";
 import Logo from "../assets/header/logo_n.svg";
+import Insta from "../assets/Footer/instagram.png";
+import Git from "../assets/Footer/GitHub.png";
 import { Link } from "react-router-dom";
 
 function Footer({ semRadius }) {
@@ -29,6 +31,14 @@ function Footer({ semRadius }) {
                 Sinaliza<span>AI</span>
               </h1>
               <h3>Comunicação é direito, não escolha</h3>
+              <div className={styles.cont_i}>
+                <a href="#">
+                  <img src={Insta} alt="" />
+                </a>
+                <a href="#">
+                  <img src={Git} alt="" />
+                </a>
+              </div>
             </div>
           </Link>
         </div>
@@ -51,7 +61,7 @@ function Footer({ semRadius }) {
             <h2>Contato</h2>
             <div className={styles.cont_p}>
               <p>(11) 4002-8922</p>
-              <p>sinalizaai@gmail.com</p>
+              <p>sinalizai.contatos@gmail.com</p>
               <p>Senac Lapa Tito, 54</p>
               <p>Vila Romana, São Paulo</p>
               <p>05061-200</p>
