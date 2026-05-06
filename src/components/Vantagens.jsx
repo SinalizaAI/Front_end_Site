@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import styles from "../css/Vantagens.module.css";
-import Imagem_1 from "../assets/Vantagens/Image_1.png";
-import Imagem_2 from "../assets/Vantagens/image_2.png";
-import Imagem_3 from "../assets/Vantagens/image3.jpg";
-import Imagem_4 from "../assets/Vantagens/image6.jpg";
-import Imagem_5 from "../assets/Vantagens/image5.jpg";
-import Imagem_6 from "../assets/Vantagens/image4.jpg";
-
-const PAGINAS = 3;
+import Imagem_1 from "../assets/Vantagens/Vantagem1.png";
+import Imagem_2 from "../assets/Vantagens/Vantagem2.png";
+import Imagem_3 from "../assets/Vantagens/Vantagem3.png";
+import Imagem_4 from "../assets/Vantagens/Vantagem4.png";
+import Imagem_5 from "../assets/Vantagens/Vantagem5.png";
+import Imagem_6 from "../assets/Vantagens/Vantagem6.png";
 
 const itens = [
   {
@@ -28,63 +26,71 @@ const itens = [
   },
   {
     imagem: Imagem_4,
-    titulo: "Melhora na experiência do cliente",
+    titulo: "Melhora na experiência",
     descricao: "Atendimento mais confortável, autônomo e inclusivo.",
   },
   {
     imagem: Imagem_5,
-    titulo: "Prestigio social",
-    descricao: "Destaca a empresa como inovadora e socialmente responsável",
+    titulo: "Prestígio social",
+    descricao: "Destaca a empresa como inovadora e socialmente responsável.",
   },
   {
     imagem: Imagem_6,
     titulo: "Conformidade legal",
-    descricao:
-      "Ajuda sua empresa a cumprir a Lei Brasileira de Inclusão e normas de acessibilidade.",
+    descricao: "Ajuda sua empresa a cumprir a Lei Brasileira de Inclusão.",
   },
 ];
 
 function Vantagens() {
-  const [pagina, setPagina] = useState(0);
+  const [ativo, setAtivo] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const intervalo = setInterval(() => {
-      setPagina((prev) => (prev + 1) % PAGINAS);
-    }, 15000);
+    const verificar = () => setIsMobile(window.innerWidth <= 768);
+    verificar(); // roda na montagem
+    window.addEventListener("resize", verificar);
+    return () => window.removeEventListener("resize", verificar);
+  }, []);
 
-    return () => clearInterval(intervalo);
-  }, [pagina]);
+  const handleClick = (i) => {
+    if (!isMobile) return;
+    setAtivo((prev) => (prev === i ? null : i)); // toggle: clica de novo pra fechar
+  };
 
-  // Cada página mostra 2 itens
-  const index1 = pagina * 2;
-  const index2 = pagina * 2 + 1;
+  const handleMouseEnter = (i) => {
+    if (isMobile) return;
+    setAtivo(i);
+  };
+
+  const handleMouseLeave = () => {
+    if (isMobile) return;
+    setAtivo(null);
+  };
 
   return (
     <section className={styles.vantagens_sec} id="vantagens">
       <h1>Vantagens de usar o SinalizaAI</h1>
+      <h2 className={styles.txt2}>
+        {isMobile
+          ? "Toque nas imagens para ver as vantagens"
+          : "Passe o mouse sobre as imagens para ver as vantagens"}
+      </h2>
 
-      <div className={styles.container}>
-        {[index1, index2].map((i) => (
-          <div key={i} className={styles.item_container}>
-            <div className={styles.item_image}>
-              <img src={itens[i].imagem} alt={itens[i].titulo} />
-            </div>
-            <div className={styles.texts}>
-              <h2>{itens[i].titulo}</h2>
-              <p>{itens[i].descricao}</p>
+      <div className={styles.gallery_wrap}>
+        {itens.map((item, i) => (
+          <div
+            key={i}
+            className={`${styles.item} ${ativo === i ? styles.item_ativo : ""}`}
+            style={{ backgroundImage: `url(${item.imagem})` }}
+            onClick={() => handleClick(i)}
+            onMouseEnter={() => handleMouseEnter(i)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className={styles.item_overlay}>
+              <h2>{item.titulo}</h2>
+              <p>{item.descricao}</p>
             </div>
           </div>
-        ))}
-      </div>
-
-      {/* 3 bolinhas */}
-      <div className={styles.dots}>
-        {Array.from({ length: PAGINAS }).map((_, i) => (
-          <button
-            key={i}
-            className={`${styles.dot} ${i === pagina ? styles.dot_ativo : ""}`}
-            onClick={() => setPagina(i)}
-          />
         ))}
       </div>
     </section>
