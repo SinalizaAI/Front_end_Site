@@ -2,196 +2,100 @@
 
 .perguntas_sec {
   width: 100%;
-  height: 800px;
+  height: 700px;
   display: flex;
-}
-
-.image_cont {
-  width: 40%;
-  height: 800px;
-  background-image: url(../assets/Perguntas/image_1.png);
+  background-image: url(../assets/Perguntas/fundo.png);
   background-size: cover;
-  background-position: 40%;
   background-repeat: no-repeat;
-}
-
-/* Texts */
-
-.content_cont {
-  width: 60%;
-  height: 800px;
-  background-color: var(--azul_claro);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Conteúdo */
-
-.content {
+.container {
   width: 90%;
-  height: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.content h1 {
-  color: var(--branco_puro);
-  text-align: center;
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: #000;
-  font-family: var(--fonte_Prosto);
-  font-size: 45px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-/* Perguntas */
-
-.perguntas_cont {
-  width: 100%;
   height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.pergunta {
-  width: 100%;
-  height: 70px;
-  border-radius: 20px;
-  background-color: var(--branco);
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  gap: 30px;
-  padding: 40px;
+/* Text */
+
+.text {
+  width: 50%;
 }
 
-.pergunta h2 {
+.text h1 {
   color: var(--azul_escuro);
-  text-align: center;
-  font-family: var(--fonte_Nunito);
+  text-align: right;
+  font-family: var(--fonte_lexend);
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-/*  */
+/* Pergunta */
 
-/* Wrapper que agrupa pergunta + resposta */
-.pergunta_wrapper {
+.pergunta {
+  width: 60%;
+  height: 150px;
+  border-radius: 20px;
+  border: 1px solid var(--branco_puro);
+  background: rgba(56, 107, 124, 0.8);
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
+  gap: 10px;
 }
 
-/* Torna o cursor pointer para indicar que é clicável */
-.pergunta {
-  cursor: pointer;
-  /* ...resto do seu CSS existente... */
+.pergunta:hover {
+  transform: scale(1.01);
+  background-color: var(--azul_escuro);
+  transition: 0.2s ease-in-out;
 }
 
-/* Animação da seta */
-.seta {
-  transition: transform 0.3s ease;
+.pergunta h2 {
+  color: var(--branco_puro);
+  font-family: var(--fonte_lexend);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-inline: 20px;
 }
 
-.seta_aberta {
-  transform: rotate(180deg); /* Vira a seta para cima */
-  transition: transform 0.3s ease;
+.pergunta p {
+  color: var(--branco_puro);
+  font-family: var(--fonte_inter);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding-inline: 20px;
 }
 
-/* Caixa de resposta */
-.resposta {
-  background-color: var(--branco);
-  border-radius: 0 0 20px 20px;
-  padding: 20px 40px;
-  margin-top: -10px; /* Cola na pergunta acima */
-  animation: slideDown 0.3s ease; /* Animação suave */
+.pergunta span {
+  font-weight: 600;
 }
 
-.resposta p {
-  color: var(--azul_escuro);
-  font-family: var(--fonte_Nunito);
-  font-size: 32px;
-  line-height: 1.5;
+/* Pergunta 2 */
+
+.pergunta_2 {
+  margin-left: 10%;
 }
 
-/* Animação de abertura */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Pergunta 3 */
+
+.pergunta_3 {
+  margin-left: 20%;
 }
 
 /* Mobile */
 
 @media (max-width: 800px) {
-  .image_cont {
-    width: 0;
-    background-image: none;
-  }
-
-  .content_cont {
-    width: 100%;
-  }
-
-  .perguntas_cont {
-    height: 600px;
-  }
-
-  .content_cont h1 {
-    font-size: 24px;
-  }
-
-  .pergunta {
-    gap: 10px;
-  }
-
-  .pergunta h2 {
-    font-size: 22px;
-  }
-
-  .resposta p {
-    font-size: 22px;
-  }
-
-  .pergunta img {
-    width: 40px;
-  }
 }
 
 @media (min-width: 801px) and (max-width: 1220px) {
-  .content_cont h1 {
-    font-size: 26px;
-  }
-
-  .pergunta {
-    gap: 30px;
-  }
-
-  .perguntas_cont {
-    height: 600px;
-  }
-
-  .pergunta h2 {
-    font-size: 25px;
-  }
-
-  .resposta p {
-    font-size: 25px;
-  }
-
-  .pergunta img {
-    width: 40px;
-  }
 }
