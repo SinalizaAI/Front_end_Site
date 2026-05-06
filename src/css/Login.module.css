@@ -110,7 +110,7 @@
 
 .entrar_conta h2 {
     color: white;
-    font-family: var(f);
+    font-family: var(--fonte_lexend);
 }
 
 .entrar {
