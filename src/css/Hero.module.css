@@ -167,6 +167,8 @@
   }
 
   .text {
+    top: 35%;
+    left: 25%;
     width: 50%;
     height: auto;
     gap: 16px;
@@ -175,6 +177,7 @@
   .text h1 {
     font-size: 22px;
     text-align: center;
+    color: var(--branco_puro);
   }
 
   .buttons {
