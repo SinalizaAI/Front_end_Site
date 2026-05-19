@@ -1,0 +1,207 @@
+@import url(../css/Global.css);
+
+.main {
+    position: relative;
+    width: 100%;
+    margin: auto;
+
+    padding: 176px;
+    padding-top: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 50px;
+}
+
+.main h1 {
+    font-family: var(--fonte_lexend);
+    font-weight: normal;
+    color: var(--azul_claro);
+    font-size: 40px;
+    text-align: center;
+}
+
+.main h2 {
+    font-family: var(--fonte_lexend);
+    font-weight: normal;
+    color: var(--azul_claro);
+    font-size: 25px;
+}
+
+
+.main p {
+    font-family: var(--fonte_inter);
+    color: var(--azul_escuro);
+    font-size: 20px;
+}
+
+.origem {
+    width: 100%;
+}
+
+.origem div {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.cultura {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: stretch;
+    justify-items: center;
+}
+
+.divisoes_cultura,
+.image_cultura {
+    width: 100%;
+    max-width: 609px;
+    height: 202px;
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.image_cultura {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.image_cultura img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.valores {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.valores_icones {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.icon_valores {
+    width: 80px;
+    height: auto;
+}
+
+.valor_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.valor_item span {
+    font-family: var(--fonte_inter);
+    font-size: 20px;
+    color: var(--azul_escuro);
+}
+
+.por_que_existe{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.texto_por_que {
+    width: 708px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.diferencial {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.equipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.btn {
+  width: 20%;
+  height: 50px;
+  border-radius: 47px;
+  color: var(--azul_escuro);
+  background-color: var(--amarelo);
+  font-family: var(--fonte_inter);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  border: 1px solid var(--azul_escuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--azul_claro);
+  color: var(--branco_puro);
+  cursor: pointer;
+}
+
+.por_que_existe,
+.para_onde,
+.diferencial,
+.equipe {
+    width: 100%;
+}
+
+
+.por_que_existe img,
+.diferencial img,
+.origem img {
+    max-width: 100%;
+}
+
+
+@media (max-width: 900px) {
+
+    .main {
+        padding: 40px 20px;
+        padding-top: 120px;
+    }
+
+    .cultura {
+        grid-template-columns: 1fr;
+    }
+
+    .divisoes_cultura,
+    .image_cultura {
+        height: auto;
+        min-height: 350px;
+    }
+
+    .main h1 {
+        font-size: 32px;
+    }
+
+    .main h2 {
+        font-size: 22px;
+    }
+
+    .main p {
+        font-size: 18px;
+    }
+}

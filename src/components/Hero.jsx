@@ -25,12 +25,9 @@ function Hero() {
           <Link to="/Tradutor" className={styles.btn1}>
             Teste agora
           </Link>
-          <button
-            className={styles.btn2}
-            onClick={() => scrollToSection("vantagens")}
-          >
+          <Link to="/pages/Sobre_Projeto" className={styles.btn2}>
             Saiba mais
-          </button>
+          </Link>
         </div>
       </div>
     </section>

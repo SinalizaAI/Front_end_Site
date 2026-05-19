@@ -65,21 +65,10 @@
   margin: 0 auto;
 }
 
-.buttons button {
-  width: 45%;
-  height: 50px;
-  border-radius: 47px;
-  color: var(--azul_escuro);
-  font-family: var(--fonte_inter);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  border: 1px solid var(--azul_escuro);
-}
+/* Estilo base dos botões */
 
-.btn1 {
-  background-color: var(--amarelo);
+.btn1,
+.btn2 {
   width: 45%;
   height: 50px;
   border-radius: 47px;
@@ -90,18 +79,28 @@
   font-weight: 700;
   line-height: normal;
   border: 1px solid var(--azul_escuro);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-decoration: none;
+  transition: 0.2s;
+}
+
+/* Botão amarelo */
+
+.btn1 {
+  background-color: var(--amarelo);
 }
 
 .btn1:hover {
   background-color: var(--azul_claro);
   color: var(--branco_puro);
-  transition: 0.2s;
   cursor: pointer;
 }
+
+/* Botão branco */
 
 .btn2 {
   background-color: var(--branco_puro);
@@ -110,7 +109,6 @@
 .btn2:hover {
   background-color: var(--azul_claro);
   color: var(--branco_puro);
-  transition: 0.2s;
   cursor: pointer;
 }
 
@@ -148,12 +146,14 @@
   }
 
   .btn1,
-  .buttons button {
+  .btn2 {
     width: 45%;
     height: 40px;
     font-size: 13px;
   }
 }
+
+/* Responsividade - Tablet */
 
 @media (min-width: 601px) and (max-width: 1000px) {
   .hero_sec {
@@ -187,12 +187,14 @@
   }
 
   .btn1,
-  .buttons button {
+  .btn2 {
     width: 45%;
     height: 40px;
     font-size: 13px;
   }
 }
+
+/* Responsividade - Notebook */
 
 @media (min-width: 1001px) and (max-width: 1270px) {
   .text {
