@@ -1,6 +1,6 @@
-import { useState } from "react"; 
+import { useState } from "react";
 import styles from "../css/Footer.module.css";
-import Logo from "../assets/Header/logo_oficial.png";
+import Logo from "../assets/header/logo_oficial.png";
 import Insta from "../assets/Footer/Instagram.png";
 import InstaAmarelo from "../assets/Footer/instagram_logo_amarela.png";
 import Git from "../assets/Footer/GitHub.png";
@@ -45,27 +45,24 @@ function Footer() {
               onMouseEnter={() => setIsInstaHovered(true)}
               onMouseLeave={() => setIsInstaHovered(false)}
             >
-              <img 
-                src={isInstaHovered ? InstaAmarelo : Insta} 
-                alt="Instagram" 
+              <img
+                src={isInstaHovered ? InstaAmarelo : Insta}
+                alt="Instagram"
               />
             </a>
-            
-            <a 
-              href="https://github.com/SinalizaAI" 
+
+            <a
+              href="https://github.com/SinalizaAI"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={() => setIsGitHovered(true)}
               onMouseLeave={() => setIsGitHovered(false)}
             >
-              <img 
-                src={isGitHovered ? GitAmarelo : Git} 
-                alt="GitHub" 
-              />
+              <img src={isGitHovered ? GitAmarelo : Git} alt="GitHub" />
             </a>
           </div>
         </div>
-        
+
         <div className={styles.texts_cont}>
           <div className={styles.cont_t}>
             <h2>Navegação</h2>
