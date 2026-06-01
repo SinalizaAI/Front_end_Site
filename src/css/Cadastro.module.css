@@ -11,21 +11,30 @@
 }
 
 .main h1 {
-    font-family: var(--fonte_lexend);
-    font-weight: normal;
     color: var(--azul_claro);
-    font-size: 50px;
+    text-align: center;
+    font-family: var(--fonte_lexend);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 10px;
 }
 
 .p1 {
-    width: 703px;
-    font-family: var(--fonte_inter);
+    color: var(--azul_oc);
     text-align: center;
-    margin-top: 40px;
+    font-family: var(--fonte_inter);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 10px;
 }
 
 .section {
-    width: 976.7px;;
+    width: 976.7px;
+    ;
     height: 538.14px;
     background-color: aquamarine;
     margin-top: 40px;
@@ -56,13 +65,16 @@
 .bem_vindo h2 {
     width: 290px;
     color: var(--azul_claro);
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .bem_vindo p {
     width: 200px;
     color: var(--azul_escuro);
-    font-size: 25px;
+    font-size: 20px;
     font-family: var(--fonte_inter);
+    font-weight: 300;
 }
 
 .btn {
@@ -77,13 +89,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 79px;
+    
 }
 
 .btn:hover {
     background-color: var(--amarelo);
     color: var(--azul_escuro);
-    border: 1px solid var(--azul_escuro);
     transition: 0.1s;
 }
 
@@ -110,17 +121,20 @@
 .crie_conta h2 {
     color: white;
     font-family: var(--fonte_lexend);
+    font-size: 25px;
 }
 
 .cadastre {
     font-family: var(--fonte_inter);
     color: white;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .escrever {
     width: 451px;
     height: 54px;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 25px;
     padding-left: 15px;
     background-color: var(--branco);
@@ -189,7 +203,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 22px;
-    border: 1px solid var(--azul_escuro);
 }
 
 .btn2:hover {
@@ -198,5 +211,3 @@
     cursor: pointer;
     transition: 0.1s;
 }
-
-

@@ -12,7 +12,7 @@
   position: fixed;
   width: 100%;
   height: 80px;
-  background-color: var(--azul_n); /* ← era --azul_escuro */
+  background-color: var(--azul_n);
   justify-content: center;
   align-items: center;
   display: flex;
@@ -86,6 +86,7 @@
 }
 
 .links_nav nav a {
+  position: relative;
   text-decoration: none;
   color: var(--branco_puro);
   font-family: var(--fonte_inter);
@@ -93,6 +94,26 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  width: fit-content; /* ← Garante que no desktop a linha fique do tamanho exato do texto */
+}
+
+/* Aplica a linha apenas nos links do desktop que NÃO possuem a classe .button */
+.links_nav nav a:not(.button)::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--amarelo);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ativa a expansão da linha no hover apenas se NÃO for .button */
+.links_nav nav a:not(.button):hover::after {
+  transform: scaleX(1);
 }
 
 /* Button */
@@ -116,7 +137,6 @@
 .links_nav nav .button:hover {
   background-color: var(--branco);
   transition: 0.2s;
-  border: 1px solid var(--azul_escuro);
   cursor: pointer;
   color: var(--azul_escuro);
 }
@@ -145,7 +165,6 @@
     opacity 0.3s ease;
 }
 
-/* Animação do hambúrguer virando X */
 .span_aberto_1 {
   transform: translateY(9px) rotate(45deg);
 }
@@ -173,7 +192,7 @@
   max-width: 320px;
   height: 100vh;
   border-radius: 20px 0px 0px 20px;
-  background-color: var(--azul_claro); /* ← era --azul_escuro */
+  background-color: var(--azul_claro);
   z-index: 99;
   padding-top: 100px;
   transform: translateX(100%);
@@ -193,11 +212,32 @@
 }
 
 .drawer_nav a {
+  position: relative;
   text-decoration: none;
   color: var(--branco_puro);
-  font-family: var(--fonte_inter); /* ← era --fonte_Jakarta */
+  font-family: var(--fonte_inter);
   font-size: 22px;
   font-weight: 400;
+  width: fit-content; /* ← Evita que a linha estique 100% da largura da coluna do menu mobile */
+  padding-bottom: 4px;
+}
+
+/* Efeito da linha nascendo do centro para os links do mobile (exceto o botão) */
+.drawer_nav a:not(.button)::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--amarelo);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.drawer_nav a:not(.button):hover::after {
+  transform: scaleX(1);
 }
 
 .drawer_nav a:hover {
@@ -210,8 +250,8 @@
   height: 44px;
   border-radius: 47px;
   background-color: var(--amarelo);
-  color: var(--azul_escuro); /* ← era --azul_escuro */
-  font-family: var(--fonte_inter); /* ← era --fonte_Jakarta */
+  color: var(--azul_escuro);
+  font-family: var(--fonte_inter);
   font-size: 18px;
   font-weight: 500;
   display: flex;
@@ -221,7 +261,7 @@
 
 .drawer_nav .button:hover {
   background-color: var(--branco_puro);
-  color: var(--azul_escuro); /* ← era --azul_escuro */
+  color: var(--azul_escuro);
   transition: 0.1s;
   cursor: pointer;
 }

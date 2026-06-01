@@ -1,10 +1,13 @@
+
 import { Link } from "react-router-dom";
 import styles from "../css/PlanosCompletos.module.css";
 import Line from "../assets/Planos/line.png";
 
 function PlanosCompletos() {
   return (
+    
     <section className={styles.sec}>
+      {/*
       <h1>Conheça nossos planos</h1>
       <div className={styles.basico_cont}>
         <div className={styles.cont1}>
@@ -74,7 +77,7 @@ function PlanosCompletos() {
         </div>
       </div>
 
-      {/* Proto totem */}
+      {/* Proto totem
       <div className={`${styles.basico_cont} ${styles.proto}`}>
         <div className={styles.cont1}>
           <div className={styles.title}>
@@ -163,7 +166,7 @@ function PlanosCompletos() {
         </div>
       </div>
 
-      {/* Completo */}
+      {/* Completo
       <div className={`${styles.basico_cont} ${styles.completo}`}>
         <div className={styles.cont1}>
           <div className={styles.title}>
@@ -269,6 +272,7 @@ function PlanosCompletos() {
           </div>
         </div>
       </div>
+      */}
     </section>
   );
 }

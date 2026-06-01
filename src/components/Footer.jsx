@@ -1,10 +1,16 @@
+import { useState } from "react"; 
 import styles from "../css/Footer.module.css";
-import Logo from "../assets/header/logo_n.svg";
+import Logo from "../assets/Header/logo_oficial.png";
 import Insta from "../assets/Footer/Instagram.png";
+import InstaAmarelo from "../assets/Footer/instagram_logo_amarela.png";
 import Git from "../assets/Footer/GitHub.png";
+import GitAmarelo from "../assets/Footer/github_logo_amarela.png";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const [isInstaHovered, setIsInstaHovered] = useState(false);
+  const [isGitHovered, setIsGitHovered] = useState(false);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -16,14 +22,13 @@ function Footer() {
     <footer className={`${styles.footer_sec}`}>
       <div className={styles.footer_main}>
         <div className={styles.logo_cont}>
-          {/* Logo + slogan */}
           <Link
             to={"/"}
             className={styles.logo_container}
             onClick={() => scrollToSection("inicio")}
           >
             <div className={styles.logo}>
-              <img src={Logo} alt="Logo do projeto" />
+              <img src={Logo} alt="Logo do SinalizaAI" />
             </div>
             <div className={styles.textos}>
               <h1>
@@ -32,21 +37,35 @@ function Footer() {
               <h3>Comunicação é direito, não escolha</h3>
             </div>
           </Link>
-
-          {/* ✅ Fora do Link, abaixo do slogan */}
           <div className={styles.cont_i}>
             <a
               href="https://www.instagram.com/sinalizaai.brasil/"
               target="_blank"
               rel="noreferrer"
+              onMouseEnter={() => setIsInstaHovered(true)}
+              onMouseLeave={() => setIsInstaHovered(false)}
             >
-              <img src={Insta} alt="Instagram" />
+              <img 
+                src={isInstaHovered ? InstaAmarelo : Insta} 
+                alt="Instagram" 
+              />
             </a>
-            <a href="#" rel="noreferrer">
-              <img src={Git} alt="GitHub" />
+            
+            <a 
+              href="https://github.com/SinalizaAI" 
+              target="_blank"
+              rel="noreferrer"
+              onMouseEnter={() => setIsGitHovered(true)}
+              onMouseLeave={() => setIsGitHovered(false)}
+            >
+              <img 
+                src={isGitHovered ? GitAmarelo : Git} 
+                alt="GitHub" 
+              />
             </a>
           </div>
         </div>
+        
         <div className={styles.texts_cont}>
           <div className={styles.cont_t}>
             <h2>Navegação</h2>
@@ -57,7 +76,7 @@ function Footer() {
               <Link to={"/"} onClick={() => scrollToSection("funciona")}>
                 Como funciona
               </Link>
-              <Link to={"/PlanosCompletos"}>Planos</Link>
+              <Link to={"/pages/Planos"}>Planos</Link>
               <Link to={"/pages/Sobre_Equipe"}>Sobre nós</Link>
               <Link to={"/Tradutor"}>Testar agora</Link>
             </div>

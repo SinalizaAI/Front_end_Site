@@ -11,21 +11,29 @@
 }
 
 .main h1 {
-    font-family: var(--fonte_lexend);
-    font-weight: normal;
     color: var(--azul_claro);
-    font-size: 50px;
+    text-align: center;
+    font-family: var(--fonte_lexend);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 10px;
 }
 
 .p1 {
-    width: 703px;
-    font-family: var(--fonte_inter);
+    color: var(--azul_oc);
     text-align: center;
-    margin-top: 40px;
+    font-family: var(--fonte_inter);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 10px;
 }
 
 .section {
-    width: 976.7px;;
+    width: 976.7px;
     height: 538.14px;
     background-color: aquamarine;
     margin-top: 40px;
@@ -42,48 +50,49 @@
 .bem_vindo {
     width: 50%;
     height: 100%;
-    background-color: var(--branco);
+    background-color: var(--azul_claro);
     border-right: 1px black solid;
     border-radius: 20px 0px 0px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 137px;
-    gap: 24px;
+    justify-content: center;
+    gap: 30px;
 }
 
 .bem_vindo h2 {
     width: 290px;
-    color: var(--azul_claro);
+    color: var(--branco_puro);
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .bem_vindo p {
     width: 200px;
-    color: var(--azul_escuro);
-    font-size: 25px;
+    color: var(--branco_puro);
     font-family: var(--fonte_inter);
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .btn {
     width: 286px;
     height: 50px;
-    background-color: var(--azul_escuro);
+    background-color: var(--amarelo);
     font-size: 20px;
     font-family: var(--fonte_inter);
-    color: white;
+    color: var(--azul_escuro);
     text-decoration: none;
     border-radius: 47px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 79px;
+    margin-top: 15px;
 }
 
 .btn:hover {
-    background-color: var(--amarelo);
-    color: var(--azul_escuro);
-    border: 1px solid var(--azul_escuro);
+    background-color: var(--branco_puro);
     transition: 0.1s;
 }
 
@@ -91,13 +100,13 @@
 .entrar_conta {
     width: 50%;
     height: 100%;
-    background-color: var(--azul_claro);
+    background-color: var(--branco);
     border-radius: 0px 20px 20px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 48px;
+    justify-content: center;
 }
 
 .entrar_conta form {
@@ -109,22 +118,26 @@
 }
 
 .entrar_conta h2 {
-    color: white;
+    color: var(--azul_claro);
     font-family: var(--fonte_lexend);
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .entrar {
     font-family: var(--fonte_inter);
-    color: white;
+    color: var(--azul_escuro);
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .escrever {
     width: 451px;
     height: 54px;
-    border-radius: 20px;
-    margin-top: 25px;
+    border-radius: 10px;
+    margin-top: 30px;
     padding-left: 15px;
-    background-color: var(--branco);
+    background-color: var(--branco_puro);
     display: flex;
 }
 
@@ -145,7 +158,7 @@
 
 .manter_conectado {
     width: 370px;
-    color: white;
+    color: var(--azul_escuro);
     margin-top: 10px;
     display: flex;
     flex-direction: row;
@@ -164,38 +177,48 @@
 .manter {
     font-size: 15px;
     font-family: var(--fonte_inter);
+    display: flex;
+    gap: 5px;
 }
 
 .conectado {
     font-size: 15px;
     font-family: var(--fonte_inter);
-    color: var(--amarelo);
+    color: var(--azul_oc);
     text-decoration: none;
-}
-
-.conectado:hover {
-    color: var(--branco);
 }
 
 .btn2 {
     width: 286px;
     height: 50px;
-    background-color: var(--amarelo);
+    background-color: var(--azul_escuro);
     font-size: 20px;
     font-family: var(--fonte_inter);
-    color: black;
+    color: var(--branco_puro);
     text-decoration: none;
     border-radius: 47px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 22px;
-    border: 1px solid var(--azul_escuro);
 }
 
 .btn2:hover {
-    background-color: white;
+    background-color: var(--amarelo);
     color: var(--azul_escuro);
     cursor: pointer;
     transition: 0.1s;
+}
+
+.esqueceu {
+    font-family: var(--fonte_inter);
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(1, 11, 64, 0.7);
+    margin-top: 35px;
+}
+
+.esqueceu:hover {
+    color: var(--azul_escuro);
+    text-decoration: underline;
 }

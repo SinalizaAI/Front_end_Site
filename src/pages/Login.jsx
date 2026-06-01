@@ -54,7 +54,7 @@ function Login() {
                           />
                           <span className={styles.manter}>
                             Manter-se {" "}
-                            <a href="#" className={styles.conectado}>conectado.</a>
+                            <p className={styles.conectado}>conectado.</p>
                           </span>
                         </label>
                       </div>
@@ -63,7 +63,10 @@ function Login() {
                         Login
                       </button>
 
+                      
                     </form>
+
+                    <Link className={styles.esqueceu}> Esqueceu sua senha? </Link>
                   </div>
         </section>
       </main>

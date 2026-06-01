@@ -22,7 +22,7 @@
 }
 
 .container h1 {
-  color: var(--azul_escuro);
+  color: var(--azul_claro);
   text-align: center;
   font-family: var(--fonte_lexend); 
   text-align: center;
@@ -46,7 +46,6 @@
   height: 60px;
   border-radius: 47px;
   background-color: var(--amarelo);
-  border: 1px solid var(--azul_escuro); /* ← era --azul-escuro (hífen errado + variável) */
   color: var(--azul_escuro);
   font-family: var(--fonte_inter);
   font-size: 28px;

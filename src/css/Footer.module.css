@@ -5,7 +5,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--azul_n); /* ← era --azul_escuro */
+  background-color: var(--azul_n);
 }
 
 /* Wrapper principal */
@@ -24,7 +24,7 @@
   width: 50%;
   height: 400px;
   display: flex;
-  flex-direction: column; /* ← empilha Link + cont_i */
+  flex-direction: column;
   padding: 5% 5%;
   align-items: flex-start;
   justify-content: flex-start;
@@ -87,6 +87,30 @@
   text-decoration: none;
 }
 
+.cont_a a {
+  position: relative;
+  width: fit-content; /* ← Faz o link ocupar exatamente o tamanho da palavra */
+  padding-bottom: 4px;
+}
+
+/* Efeito da linha nascendo do centro para os links do footer */
+.cont_a a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--amarelo);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cont_a a:hover::after {
+  transform: scaleX(1);
+}
+
 .cont_a a:hover {
   color: var(--amarelo);
   transition: 0.1s;
@@ -132,12 +156,19 @@
 
 .cont_i {
   display: flex;
-  flex-direction: row; /* ← ícones lado a lado */
+  flex-direction: row;
   align-items: center;
   gap: 5px;
   padding: 0 5%;
   width: auto;
   height: auto;
+}
+
+/* ✅ Estilização do link dos ícones ajustada para manter o tamanho original */
+.cont_i a {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .textos span {
@@ -174,7 +205,7 @@
 
 .copyright p {
   color: var(--branco_puro);
-  font-family: var(--fonte_inter); /* ← era --fonte_Jakarta */
+  font-family: var(--fonte_inter);
   font-size: 16px;
   font-weight: 300;
   text-align: center;
@@ -204,6 +235,7 @@
     width: 40%;
     height: auto;
     padding-top: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
@@ -295,6 +327,7 @@
   .logo_cont {
     width: 100%;
     justify-content: center;
+    flex-direction: row;
   }
 
   .logo_container {

@@ -74,7 +74,6 @@
 .text3 button:hover {
   background-color: var(--amarelo);
   color: var(--azul_escuro);
-  border: 1px solid var(--azul_escuro);
   transition: 0.1s;
   cursor: pointer;
 }

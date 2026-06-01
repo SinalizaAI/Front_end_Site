@@ -1,5 +1,5 @@
 import styles from "../css/Header.module.css";
-import Logo from "../assets/header/logo_n.svg";
+import Logo from "../assets/Header/logo_oficial.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ function Header() {
           onClick={() => scrollToSection("inicio")}
         >
           <div className={styles.logo}>
-            <img src={Logo} alt="logo" />
+            <img src={Logo} alt="Logo do SinalizaAI" />
           </div>
           <h1>
             Sinaliza<span>AI</span>
@@ -39,7 +39,7 @@ function Header() {
             <Link to="/" onClick={() => scrollToSection("funciona")}>
               Como funciona
             </Link>
-            <Link to={"/PlanosCompletos"}>Planos</Link>
+            <Link to={"/pages/Planos"}>Planos</Link>
             <Link to={"/pages/Sobre_Equipe"}>Sobre nós</Link>
             <Link to={"/pages/Cadastro"} className={styles.button}>
               Obter agora
@@ -75,7 +75,7 @@ function Header() {
           <Link to="/" onClick={() => scrollToSection("funciona")}>
             Como funciona
           </Link>
-          <Link to={"/PlanosCompletos"} onClick={() => setMenuAberto(false)}>
+          <Link to={"/pages/Planos"} onClick={() => setMenuAberto(false)}>
             Planos
           </Link>
           <Link to={"/pages/Sobre_Equipe"} onClick={() => setMenuAberto(false)}>

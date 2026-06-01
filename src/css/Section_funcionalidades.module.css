@@ -41,7 +41,7 @@
   color: var(--amarelo);
   text-align: center;
   font-family: var(--fonte_lexend); /* ← era --fonte_Jakarta */
-  color: var(--azul_escuro);
+  color: var(--azul_claro);
   text-align: center;
   font-size: 40px;
   font-style: normal;
