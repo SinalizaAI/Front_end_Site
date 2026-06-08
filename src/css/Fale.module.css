@@ -144,7 +144,7 @@
   color: var(--azul_escuro);
   font-family: var(--fonte_inter);
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .btn button:hover {

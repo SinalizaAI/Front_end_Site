@@ -149,7 +149,7 @@ const SLIDES = [
     cargo: "Full Stack e Financeiro",
     techs: ["HTML", "CSS", "JavaScript", "Java"],
     redes: {
-      github: "https://github.com/pedrolima",
+      github: "https://github.com/ryann-08",
       linkedin: "https://www.linkedin.com/in/ryan-almeida-dev/",
     },
     imageUrl: Ryan,
@@ -161,7 +161,7 @@ const SLIDES = [
     cargo: "Full Stack e Pesquisadora",
     techs: ["Java", "React", "MySQL"],
     redes: {
-      github: "https://github.com/Thayn4-mateus",
+      github: "https://github.com/thaynamateus",
       linkedin: "https://www.linkedin.com/in/thaynamateus/",
     },
     imageUrl: Thay,

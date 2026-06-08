@@ -39,7 +39,7 @@ function Footer() {
           </Link>
           <div className={styles.cont_i}>
             <a
-              href="https://www.instagram.com/sinalizaai.brasil/"
+              href="https://www.instagram.com/sinaliza_aii/"
               target="_blank"
               rel="noreferrer"
               onMouseEnter={() => setIsInstaHovered(true)}
@@ -77,7 +77,7 @@ function Footer() {
                 Como funciona
               </Link>
               <Link to={"/pages/Planos"}>Planos</Link>
-              <Link to={"/pages/Sobre_Equipe"}>Sobre nós</Link>
+              <Link to={"/pages/Sobre_Equipe"}>Equipe</Link>
               <Link to={"/Tradutor"}>Testar agora</Link>
             </div>
           </div>

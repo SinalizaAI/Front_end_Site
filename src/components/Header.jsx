@@ -40,7 +40,7 @@ function Header() {
               Como funciona
             </Link>
             <Link to={"/pages/Planos"}>Planos</Link>
-            <Link to={"/pages/Sobre_Equipe"}>Sobre nós</Link>
+            <Link to={"/pages/Sobre_Equipe"}>Equipe</Link>
             <Link to={"/pages/Cadastro"} className={styles.button}>
               Obter agora
             </Link>
@@ -79,7 +79,7 @@ function Header() {
             Planos
           </Link>
           <Link to={"/pages/Sobre_Equipe"} onClick={() => setMenuAberto(false)}>
-            Sobre nós
+            Equipe
           </Link>
           <Link
             to={"/pages/Cadastro"}
