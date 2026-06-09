@@ -282,4 +282,10 @@
     .crie_conta h2 {
         font-size: 22px;
     }
+    .confirmo {
+        padding-top: 22px;
+    }
+    .btn2 {
+        margin-top: 0;
+    }
 }

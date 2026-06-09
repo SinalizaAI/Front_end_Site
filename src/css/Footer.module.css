@@ -163,7 +163,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 5px;
+  gap: 12px; /* Aumentei um pouco o espaçamento entre os ícones */
   padding: 0 5%;
   width: auto;
   height: auto;
@@ -173,6 +173,15 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  flex-shrink: 0; /* Impede que o link seja esmagado pelo flexbox */
+}
+
+/* NOVO: Força as imagens a manterem o tamanho fixo desejado */
+.cont_i a img {
+  width: 50px;      /* Defina aqui o tamanho horizontal fixo dos ícones */
+  height: 50px;     /* Defina aqui o tamanho vertical fixo dos ícones */
+  object-fit: contain;
+  flex-shrink: 0;   /* Garante que o navegador não diminua o tamanho da imagem */
 }
 
 .textos span {
@@ -326,7 +335,9 @@
   .logo_cont {
     width: 100%;
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column; /* Mudado de row para column para empilhar a logo e os ícones */
+    gap: 16px;
   }
 
   .logo_container {
