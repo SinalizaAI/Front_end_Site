@@ -11,10 +11,65 @@ import Planos from "./pages/Planos";
 import Sobre_Projeto from "./pages/Sobre_Projeto";
 import Usuario from "./pages/Usuario";
 import { useEffect, useRef } from "react";
-import { useEffect } from "react";
 import OttoChatbot from "./components/OttoChatBot/OttoChatBot";
 
-function Layout() {
+// function Layout() {
+//   useEffect(() => {
+//     const init = () => {
+//       if (typeof RybenaApi === "undefined") {
+//         console.warn("Rybená não carregou.");
+//         return;
+//       }
+//       RybenaApi.getInstance().handleLoaded(() => {
+//         console.log("Rybená carregou!");
+//       });
+//     };
+
+//     // Aguarda o script terminar de inicializar
+//     window.addEventListener("load", init);
+//     return () => window.removeEventListener("load", init);
+//   }, []);
+//   return (
+//     <main>
+//       <Header />
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/Tradutor" element={<Tradutor />} />
+//         <Route path="/pages/Sobre_Projeto" element={<Sobre_Projeto />} />
+//         <Route path="/pages/Cadastro" element={<Cadastro />} />
+//         <Route path="/Login" element={<Login />} />
+//         <Route path="/pages/Planos" element={<Planos />} />
+//         <Route path="/pages/Usuario" element={<Usuario />} />
+//         <Route path="/pages/Sobre_Equipe" element={<HoverSliderDemo />} />
+//       </Routes>
+//       <OttoChatbot />
+//       <Footer />
+//     </main>
+//   );
+// }
+
+// function App() {
+//   return (
+//     <Router>
+//       <main>
+//         <Header />
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/Tradutor" element={<Tradutor />} />
+//           <Route path="/pages/Sobre_Projeto" element={<Sobre_Projeto />} />
+//           <Route path="/pages/Cadastro" element={<Cadastro />} />
+//           <Route path="/Login" element={<Login />} />
+//           <Route path="/pages/Planos" element={<Planos />} />
+//           <Route path="/pages/Usuario" element={<Usuario />} />
+//           <Route path="/pages/Sobre_Equipe" element={<HoverSliderDemo />} />
+//         </Routes>
+//         <Footer />
+//       </main>
+//     </Router>
+//   );
+// }
+
+function App() {
   useEffect(() => {
     const init = () => {
       if (typeof RybenaApi === "undefined") {
@@ -25,31 +80,10 @@ function Layout() {
         console.log("Rybená carregou!");
       });
     };
-
-    // Aguarda o script terminar de inicializar
     window.addEventListener("load", init);
     return () => window.removeEventListener("load", init);
   }, []);
-  return (
-    <main>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Tradutor" element={<Tradutor />} />
-        <Route path="/pages/Sobre_Projeto" element={<Sobre_Projeto />} />
-        <Route path="/pages/Cadastro" element={<Cadastro />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/pages/Planos" element={<Planos />} />
-        <Route path="/pages/Usuario" element={<Usuario />} />
-        <Route path="/pages/Sobre_Equipe" element={<HoverSliderDemo />} />
-      </Routes>
-      <OttoChatbot />
-      <Footer />
-    </main>
-  );
-}
 
-function App() {
   return (
     <Router>
       <main>
@@ -64,6 +98,7 @@ function App() {
           <Route path="/pages/Usuario" element={<Usuario />} />
           <Route path="/pages/Sobre_Equipe" element={<HoverSliderDemo />} />
         </Routes>
+        <OttoChatbot />
         <Footer />
       </main>
     </Router>
