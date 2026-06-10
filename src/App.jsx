@@ -15,18 +15,28 @@ import { useEffect } from "react";
 function Layout() {
   useEffect(() => {
   const init = () => {
-    if (typeof RybenaApi === "undefined") {
+    if (!window.RybenaApi) {
       console.warn("Rybená não carregou.");
       return;
     }
-    RybenaApi.getInstance().handleLoaded(() => {
+    window.RybenaApi.getInstance().handleLoaded(() => {
       console.log("Rybená carregou!");
     });
   };
 
-  // Aguarda o script terminar de inicializar
-  window.addEventListener("load", init);
-  return () => window.removeEventListener("load", init);
+  // Se o load já aconteceu, window.RybenaApi pode já existir
+  if (window.RybenaApi) {
+    init();
+  } else {
+    // Script ainda carregando — espera pelo elemento <script> específico
+    const script = document.querySelector('script[src*="rybena.js"]');
+    if (script) {
+      script.addEventListener("load", init);
+      return () => script.removeEventListener("load", init);
+    } else {
+      console.warn("Script da Rybená não encontrado no DOM.");
+    }
+  }
 }, []);
   return (
     <main>
