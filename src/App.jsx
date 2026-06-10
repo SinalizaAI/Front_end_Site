@@ -15,13 +15,11 @@ import { useEffect } from "react";
 function Layout() {
   useEffect(() => {
   const interval = setInterval(() => {
+    console.log("Checando RybenaDOM:", window.RybenaDOM);
+    
     if (window.RybenaDOM) {
       clearInterval(interval);
-      
-      // 1. Inicializa o engine
       window.RybenaDOM.getInstance().getRybenaScripts("hidden");
-      
-      // 2. Aguarda estar pronto
       window.RybenaApi.getInstance().handleLoaded(() => {
         console.log("Rybená pronta!");
       });
