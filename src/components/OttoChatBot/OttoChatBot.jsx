@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect } from "react";
-import ottoImg from "../../assets/Mascote/otto.png"; // coloque a imagem na pasta assets
+import { useRef, useEffect, useState } from "react";
+import ottoImg from "../../assets/Mascote/otto.png";
 import "./OttoChatBot.css";
+import { useOtto } from "../../context/OttoContext";
 
 export default function OttoChatbot() {
-  const [aberto, setAberto] = useState(false);
+  const { aberto, setAberto } = useOtto();
   const [mensagens, setMensagens] = useState([
     {
       role: "assistant",
@@ -70,7 +71,6 @@ export default function OttoChatbot() {
           {/* Header */}
           <div className="otto-header">
             <div className="otto-header-info">
-              {/* <img src={ottoImg} alt="Otto" className="otto-avatar-img" /> */}
               <div className="otto-header-texto">
                 <strong>Otto</strong>
                 <span>Assistente SinalizaAI</span>
