@@ -5,6 +5,7 @@ import segurançaIcon from "../assets/Usuario/segurança.png";
 import senhaIcon from "../assets/Usuario/senha.png";
 import verificacaoIcon from "../assets/Usuario/verificacao.png";
 import librasIcon from "../assets/Usuario/libras.png";
+import { atualizarCliente } from "../lib/api";
 import { useEffect, useState } from "react";
 import { buscarCliente } from "../lib/api";
 import { getIdDoToken } from "../lib/auth";
@@ -79,9 +80,25 @@ export default function UserProfile() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
-    alert("Alterações salvas com sucesso!");
+
+    try {
+      const id = getIdDoToken();
+
+      // Só envia os campos que o backend conhece
+      const payload = {
+        nomeResponsavel: formData.nomeCompleto,
+        razaoSocial: formData.razaoSocial,
+        email: formData.email,
+        telefone: formData.telefone,
+      };
+
+      await atualizarCliente(id, payload);
+      alert("Alterações salvas com sucesso!");
+    } catch (err) {
+      alert(err.message || "Erro ao salvar alterações.");
+    }
   };
 
   return (

@@ -92,3 +92,26 @@ export async function desativarCliente(id) {
     throw new Error(data.erro || "Erro ao desativar conta.");
   }
 }
+
+// Atualizar dados -  somente os que estão mapeados no banco
+
+export async function atualizarCliente(id, dados) {
+  const token = localStorage.getItem("token");
+
+  const res = await fetch(`${API_URL}/api/clientes/${id}`, {
+    method: "PUT",
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(dados),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.erro || "Erro ao atualizar dados.");
+  }
+
+  return data;
+}
