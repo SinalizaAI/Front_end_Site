@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+// 1. IMPORTAR O HOOK DE NAVEGAÇÃO
+import { useNavigate } from 'react-router-dom'; 
+
 import styles from "../css/Cadastro_Etapa2.module.css";
 import emailIcon from "../assets/Cadastro/email.png";
 import nomeIcon from "../assets/Cadastro/profile.png";
 import senhaIcon from "../assets/Cadastro/lock.png";
-import telefoneIcon from "../assets/Cadastro_Etapa2/telefone.png"
-import cnpjIcon from "../assets/Cadastro_Etapa2/cnpj.png"
-import razaoSocialIcon from "../assets/Cadastro_Etapa2/razao_social.png"
+import telefoneIcon from "../assets/Cadastro_Etapa2/telefone.png";
+import cnpjIcon from "../assets/Cadastro_Etapa2/cnpj.png";
+import razaoSocialIcon from "../assets/Cadastro_Etapa2/razao_social.png";
 
 const Icons = {
     Building: () => <img src={razaoSocialIcon} alt="Razão Social" className={styles.iconImage} />,
@@ -15,25 +18,14 @@ const Icons = {
     Phone: () => <img src={telefoneIcon} alt="Telefone" className={styles.iconImage} />,
     Lock: () => <img src={senhaIcon} alt="Senha" className={styles.iconImage} />,
 
-    // Modificado para aceitar o estado e alternar os caminhos do SVG
     Eye: ({ isOpen }) => (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             {isOpen ? (
-                // SVG do Olho Aberto
                 <>
                     <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
                     <circle cx="12" cy="12" r="3" />
                 </>
             ) : (
-                // SVG do Olho Fechado (Com o risco diagonal)
                 <>
                     <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
                     <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
@@ -46,6 +38,9 @@ const Icons = {
 };
 
 export default function CadastroCorporativo() {
+    // 2. INICIALIZAR O NAVIGATE
+    const navigate = useNavigate(); 
+
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
         razaoSocial: '',
@@ -66,9 +61,15 @@ export default function CadastroCorporativo() {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Dados enviados:', formData);
-    };
+    e.preventDefault();
+    console.log('Dados enviados:', formData);
+
+    // [Futuramente]: Sua validação de dados vai entrar bem aqui.
+    // Se a validação passar, ele executa a linha abaixo:
+
+    // CORREÇÃO: O caminho exato correspondente ao path da sua rota
+    navigate('/pages/Usuario'); 
+};
 
     return (
         <div className={styles.pageContainer}>
@@ -86,8 +87,7 @@ export default function CadastroCorporativo() {
                 </div>
 
                 <form onSubmit={handleSubmit} className={styles.form}>
-
-                    {/* Nome do Responsável */}
+                    {/* ... (Seus campos de input permanecem exatamente iguais) ... */}
                     <div className={styles.inputGroup}>
                         <label className={styles.label}>Nome do responsável <span className={styles.required}>*</span></label>
                         <div className={styles.inputWrapper}>
@@ -96,7 +96,6 @@ export default function CadastroCorporativo() {
                         </div>
                     </div>
 
-                    {/* CNPJ */}
                     <div className={styles.inputGroup}>
                         <label className={styles.label}>CNPJ <span className={styles.required}>*</span></label>
                         <div className={styles.inputWrapper}>
@@ -105,7 +104,6 @@ export default function CadastroCorporativo() {
                         </div>
                     </div>
 
-                    {/* Razão Social */}
                     <div className={styles.inputGroup}>
                         <label className={styles.label}>Razão Social <span className={styles.required}>*</span></label>
                         <div className={styles.inputWrapper}>
@@ -114,7 +112,6 @@ export default function CadastroCorporativo() {
                         </div>
                     </div>
 
-                    {/* Email */}
                     <div className={styles.inputGroup}>
                         <label className={styles.label}>Email <span className={styles.required}>*</span></label>
                         <div className={styles.inputWrapper}>
@@ -123,7 +120,6 @@ export default function CadastroCorporativo() {
                         </div>
                     </div>
 
-                    {/* Telefone */}
                     <div className={styles.inputGroup}>
                         <label className={styles.label}>Telefone <span className={styles.required}>*</span></label>
                         <div className={styles.inputWrapper}>
@@ -132,7 +128,6 @@ export default function CadastroCorporativo() {
                         </div>
                     </div>
 
-                    {/* Senha */}
                     <div className={styles.inputGroup}>
                         <label className={styles.label}>Senha (mínimo 8 caracteres) <span className={styles.required}>*</span></label>
                         <div className={styles.inputWrapper}>
@@ -152,7 +147,6 @@ export default function CadastroCorporativo() {
                                 className={styles.iconRight}
                                 onClick={() => setShowPassword(!showPassword)}
                             >
-                                {/* Passando o estado showPassword para o ícone decidir se renderiza aberto ou fechado */}
                                 <Icons.Eye isOpen={showPassword} />
                             </button>
                         </div>
@@ -166,6 +160,7 @@ export default function CadastroCorporativo() {
                             </label>
                         </div>
 
+                        {/* Seu botão permanece intacto, pois o gatilho é o onSubmit do formulário */}
                         <button type="submit" className={styles.submitBtn}>
                             Enviar e Cadastrar
                         </button>
