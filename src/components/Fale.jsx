@@ -93,7 +93,7 @@ function Fale() {
                 id="nome"
                 type="text"
                 name="nome"
-                placeholder=" "
+                placeholder="Nome Completo"
                 required
                 value={formData.nome}
                 onChange={handleChange}
@@ -134,6 +134,7 @@ function Fale() {
                 id="mensagem"
                 name="mensagem"
                 rows={6}
+                placeholder="Digite aqui..."
                 required
                 value={formData.mensagem}
                 onChange={handleChange}
