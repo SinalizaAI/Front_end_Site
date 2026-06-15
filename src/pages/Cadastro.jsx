@@ -18,7 +18,7 @@ function Cadastro() {
       return;
     }
 
-    navigate("/Login");
+    navigate("/Cadastro_Etapa2");
   };
 
   return (

@@ -1,0 +1,309 @@
+@import url(../css/Global.css);
+
+.pageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+}
+
+/* Cabeçalho de Fora */
+.headerExternal {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.titleExternal {
+    color: var(--azul_claro);
+    text-align: center;
+    font-family: var(--fonte_lexend);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.subtitleExternal {
+    color: var(--azul_oc);
+    text-align: center;
+    font-family: var(--fonte_inter);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 15px;
+}
+
+/* Container Principal do Formulário */
+.formBlock {
+    background-color: var(--azul_claro);
+    width: 100%;
+    max-width: 700px;
+    border-radius: 1.25rem;
+    padding: 3rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+/* Alinhamento do cabeçalho interno à direita como na imagem */
+.headerInternal {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.titleInternal {
+    color: white;
+    font-family: var(--fonte_lexend);
+    font-size: 25px;
+    text-align: center;
+}
+
+.subtitleInternal {
+    font-family: var(--fonte_inter);
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.label {
+    color: #ffffff;
+    font-size: 15px;
+    font-family: var(--fonte_inter);
+}
+
+.required {
+    color: #f87171;
+}
+
+/* Inputs estendidos de ponta a ponta */
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    background-color: #f8fafc;
+    color: #0f172a;
+    padding: 0.85rem 1rem 0.85rem 3rem;
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+    font-size: 20px;
+    font-family: var(--fonte_inter);
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border-color: #ffb03a;
+    background-color: #ffffff;
+}
+
+/* Ícones internos à esquerda (Imagens/PNGs) */
+.iconLeft {
+    position: absolute;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #003e4c;
+    /* Mantido 40px como na Etapa 1 */
+    width: 40px; 
+    height: 40px;
+    pointer-events: none;
+}
+
+/* Garante que as imagens PNG dentro do iconLeft ocupem o tamanho correto */
+.iconImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Ícone interno à direita (Botão do Olho/SVG) */
+.iconRight {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 0;
+    /* Retornado para o tamanho original de 1.25rem */
+    width: 25px;
+    height: 25px;
+}
+
+/* Garante que o SVG dentro do botão do olho herde o tamanho original */
+.iconRight svg {
+    width: 100%;
+    height: 100%;
+}
+
+.iconRight:hover {
+    color: #64748b;
+}
+
+/* Ajuste no padding do input para o texto não ficar por cima do ícone maior */
+.input {
+    width: 100%;
+    background-color: #f8fafc;
+    color: #0f172a;
+    /* Mantém espaço seguro na esquerda (4rem) e na direita para o olho menor (3.5rem) */
+    padding: 0.85rem 3.5rem 0.85rem 4rem; 
+    border: 2px solid transparent;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Ações Inferiores (Agora totalmente centralizadas) */
+.footerActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.checkboxWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.checkbox {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    accent-color: var(--amarelo);
+}
+
+.checkboxLabel {
+    color: #e2e8f0;
+    font-size: 15px;
+    font-family: var(--fonte_inter);
+}
+
+.link {
+    color: #ffb03a;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: var(--branco);
+}
+
+/* Botão Estilizado (Centralizado e sem estrela) */
+.submitBtn {
+    position: relative; 
+    width: 286px;
+    height: 50px;
+    background-color: var(--amarelo);
+    font-size: 20px;
+    font-family: var(--fonte_inter);
+    color: black;
+    border: none; 
+    border-radius: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s;
+    box-shadow: none; 
+    margin: 0 auto;
+}
+
+.submitBtn:hover {
+    background-color: white;
+    color: var(--azul_escuro);
+}
+
+.submitBtn:active {
+    transform: translateY(1px);
+}
+
+.btnSparkle {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    color: #ffb03a;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+/* ======================================================== */
+/* REGRAS PARA TABLET E SMARTPHONE                          */
+/* ======================================================== */
+@media (max-width: 992px) {
+    .pageContainer {
+        padding: 100px 20px; /* Evita espaçamento exagerado nas laterais igual à Etapa 1 */
+    }
+
+    .titleExternal {
+        font-size: 32px;
+    }
+
+    .subtitleExternal {
+        font-size: 16px;
+    }
+
+    .formBlock {
+        width: 100%;
+        max-width: 520px; /* Alinha com a largura máxima adotada na Etapa 1 */
+        padding: 40px 20px; /* Reduz o padding interno para sobrar espaço para os inputs */
+    }
+
+    .titleInternal {
+        font-size: 22px;
+    }
+
+    .subtitleInternal {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titleExternal {
+        font-size: 26px;
+    }
+
+    .titleInternal {
+        font-size: 20px;
+    }
+
+    .checkbox {
+        margin-top: -25px; /* Ajusta a altura da caixa com a primeira linha do texto */
+    }
+
+    .submitBtn {
+        width: 100%; /* O botão passa a ocupar toda a largura disponível no mobile */
+        max-width: 286px; /* Mantém um limite elegante para não esticar demais */
+    }
+}
