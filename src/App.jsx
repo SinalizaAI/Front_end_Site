@@ -17,10 +17,13 @@ import { OttoProvider } from "./context/OttoContext";
 
 function App() {
   useEffect(() => {
+    let cancelled = false
+
     const init = () => {
+      if (cancelled) return
+
       if (!window.RybenaApi) {
-        // ainda não carregou, tenta de novo em breve
-        setTimeout(init, 300)
+        setTimeout(init, 300) // tenta de novo até o script terminar de carregar
         return
       }
 
@@ -29,6 +32,10 @@ function App() {
           console.log("Rybená API está pronta!")
           window.RybenaApi.getInstance().openPlayer()
           window.RybenaApi.getInstance().translate("Olá, bem-vindo à Rybená!")
+
+          window.RybenaApi.getInstance().handleTranslate(() => {
+            console.log("Tradução concluída!")
+          })
         })
       } catch (e) {
         console.error("Erro ao iniciar Rybená:", e)
@@ -36,6 +43,8 @@ function App() {
     }
 
     init()
+
+    return () => { cancelled = true }
   }, [])
 
 
