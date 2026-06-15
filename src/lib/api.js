@@ -53,3 +53,42 @@ export async function enviarContato(dados) {
 
   return data;
 }
+
+// Buscar dados do cliente ao se logar
+
+export async function buscarCliente(id) {
+  const token = localStorage.getItem("token");
+  
+  const res = await fetch(`${API_URL}/api/clientes/${id}`, {
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.erro || "Erro ao buscar dados do cliente.");
+  }
+
+  return data;
+}
+
+//Excluir conta
+
+export async function desativarCliente(id) {
+  const token = localStorage.getItem("token");
+
+  const res = await fetch(`${API_URL}/api/clientes/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Authorization": `Bearer ${token}`,
+    },
+  });
+
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.erro || "Erro ao desativar conta.");
+  }
+}

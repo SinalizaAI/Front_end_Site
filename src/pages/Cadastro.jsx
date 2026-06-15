@@ -11,6 +11,8 @@ function Cadastro() {
   const [formData, setFormData] = useState({ nome: "", email: "", senha: "" });
   const navigate = useNavigate();
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -41,7 +43,9 @@ function Cadastro() {
         <div className={styles.bem_vindo}>
           <h2>Bem-vindo de volta! Faça seu Login</h2>
           <p>Acesse sua conta agora mesmo</p>
-          <Link to={"/Login"} className={styles.btn}>Login</Link>
+          <Link to={"/Login"} className={styles.btn}>
+            Login
+          </Link>
         </div>
 
         <div className={styles.crie_conta}>
@@ -74,10 +78,10 @@ function Cadastro() {
               />
             </div>
 
-            <div className={styles.escrever}>
+            <div className={styles.escrever} style={{ position: "relative" }}>
               <img src={senhaIcon} alt="Ícone Senha" />
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="senha"
                 placeholder="Senha"
                 value={formData.senha}
@@ -85,6 +89,49 @@ function Cadastro() {
                 required
                 minLength={8}
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                style={{
+                  position: "absolute",
+                  top: "1rem",
+                  right: "1rem",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  color: "#94a3b8",
+                  width: "25px",
+                  height: "25px",
+                  padding: 0,
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{ width: "100%", height: "100%" }}
+                >
+                  {showPassword ? (
+                    <>
+                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </>
+                  ) : (
+                    <>
+                      <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                      <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                      <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                      <line x1="2" x2="22" y1="2" y2="22" />
+                    </>
+                  )}
+                </svg>
+              </button>
             </div>
 
             <div className={styles.termos_de_uso}>
@@ -96,13 +143,22 @@ function Cadastro() {
                 />
                 <span className={styles.confirmo}>
                   Confirmo que li e aceito os{" "}
-                  <a href="#" className={styles.termos}>termos de uso.</a>
+                  <a href="#" className={styles.termos}>
+                    termos de uso.
+                  </a>
                 </span>
               </label>
             </div>
 
-            <button type="submit" className={styles.btn2}>Cadastrar</button>
-            <Link to={"/Login"} className={`${styles.btn} ${styles.btn_mobile}`}>Login</Link>
+            <button type="submit" className={styles.btn2}>
+              Cadastrar
+            </button>
+            <Link
+              to={"/Login"}
+              className={`${styles.btn} ${styles.btn_mobile}`}
+            >
+              Login
+            </Link>
           </form>
         </div>
       </section>
