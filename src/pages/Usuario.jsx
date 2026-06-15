@@ -28,6 +28,27 @@ export default function UserProfile() {
 
   const navigate = useNavigate();
 
+  async function handleAlterarSenha() {
+    const novaSenha = window.prompt(
+      "Digite sua nova senha (mínimo 8 caracteres):",
+    );
+
+    if (!novaSenha) return;
+
+    if (novaSenha.length < 8) {
+      alert("A senha deve ter no mínimo 8 caracteres.");
+      return;
+    }
+
+    try {
+      const id = getIdDoToken();
+      await atualizarCliente(id, { senha: novaSenha });
+      alert("Senha alterada com sucesso!");
+    } catch (err) {
+      alert(err.message || "Erro ao alterar senha.");
+    }
+  }
+
   async function handleExcluirConta() {
     const confirmar = window.confirm(
       "Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.",
@@ -406,7 +427,7 @@ export default function UserProfile() {
             <button
               type="button"
               className={styles["clickable-option-row"]}
-              onClick={() => alert("Alterar Senha")}
+              onClick={handleAlterarSenha}
             >
               <span className={styles["option-label"]}>
                 <img
