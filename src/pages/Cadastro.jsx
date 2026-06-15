@@ -10,7 +10,6 @@ function Cadastro() {
   const [aceitou, setAceitou] = useState(false);
   const [formData, setFormData] = useState({ nome: "", email: "", senha: "" });
   const navigate = useNavigate();
-
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
@@ -20,13 +19,10 @@ function Cadastro() {
 
   const handleCadastro = (e) => {
     e.preventDefault();
-
     if (!aceitou) {
       alert("Você não aceitou os termos de uso.");
       return;
     }
-
-    // ✅ Salva dados da etapa 1 para usar na etapa 2
     sessionStorage.setItem("cadastroEtapa1", JSON.stringify(formData));
     navigate("/Cadastro_Etapa2");
   };
@@ -55,7 +51,6 @@ function Cadastro() {
           <form onSubmit={handleCadastro}>
             <div className={styles.escrever}>
               <img src={nomeIcon} alt="Ícone Nome" />
-              {/* ✅ Adicionados name e value */}
               <input
                 type="text"
                 name="nome"

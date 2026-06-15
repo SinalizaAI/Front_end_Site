@@ -94,7 +94,7 @@ const SLIDES = [
     id: "slide-1",
     title: "Amanda Soares",
     color: "#44008c",
-    cargo: "PO e Front-End",
+    cargo: "Product Owner e Front-end",
     techs: ["JavaScript", "Java", "React", "HTML"],
     redes: {
       github: "https://github.com/Alexyycb",
@@ -106,7 +106,7 @@ const SLIDES = [
     id: "slide-2",
     title: "Gustavo Bozzo",
     color: "#000080",
-    cargo: "Scrum e Back-End",
+    cargo: "Scrum Master e Back-end",
     techs: ["Java", "Python", "React", "MySQL"],
     redes: {
       github: "https://github.com/Gusbzz",
@@ -118,7 +118,7 @@ const SLIDES = [
     id: "slide-3",
     title: "Ismaiara Vieira",
     color: "#f86b00",
-    cargo: "Marketing e Front-End",
+    cargo: "Front-End e Social Media",
     techs: ["JavaScript", "React", "Java", "HTML"],
     redes: {
       github: "https://github.com/ismaiaradasilvavieira04-droid",
@@ -143,7 +143,7 @@ const SLIDES = [
     id: "slide-5",
     title: "Ryan Almeida",
     color: "#6A4C93",
-    cargo: "Financeiro e Back-End",
+    cargo: "Back-End",
     techs: ["React", "MySQL", "JavaScript", "Java"],
     redes: {
       github: "https://github.com/ryann-08",
@@ -155,7 +155,7 @@ const SLIDES = [
     id: "slide-6",
     title: "Thayna Mateus",
     color: "#082256",
-    cargo: "Marketing e Front-End",
+    cargo: "Front-end e Gestora Financeira",
     techs: ["Java", "React", "MySQL"],
     redes: {
       github: "https://github.com/thaynamateus",

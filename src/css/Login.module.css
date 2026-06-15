@@ -3,11 +3,13 @@
 .main {
     position: relative;
     width: 100%;
-    padding: 100px 20px;
+    min-height: 100vh;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .main h1 {
@@ -30,6 +32,7 @@
     font-weight: 400;
     line-height: normal;
     margin: 10px;
+    max-width: 600px;
 }
 
 .section {
@@ -41,7 +44,8 @@
     border-radius: 20px;
     display: flex;
     flex-direction: row;
-    overflow: hidden; /* Garante que os fundos respeitem o border-radius */
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .section h2 {
@@ -76,7 +80,6 @@
     font-weight: 300;
 }
 
-/* Botão de cadastro da versão Desktop */
 .btn_desktop {
     width: 286px;
     height: 50px;
@@ -97,7 +100,6 @@
     transition: 0.1s;
 }
 
-/* Botão de cadastro oculto por padrão (aparece só no mobile) */
 .btn_mobile {
     display: none;
     width: 286px;
@@ -156,17 +158,19 @@
     background-color: var(--branco_puro);
     display: flex;
     border: 1px solid #ccc;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .escrever img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin: 5px;
 }
 
 .escrever input {
     width: 85%;
-    font-size: 20px;
+    font-size: 18px;
     font-family: var(--fonte_inter);
     background-color: transparent;
     outline: none;
@@ -243,12 +247,17 @@
     text-decoration: underline;
 }
 
-/* ==========================================================================
-   REGRAS DE RESPONSIVIDADE (TABLET E CELULAR)
-   ========================================================================== */
+@media (max-width: 1024px) {
+    .section {
+        width: 90%;
+        height: auto;
+        min-height: 500px;
+    }
+}
+
 @media (max-width: 768px) {
     .main {
-        padding: 100px 15px;
+        padding: 40px 15px;
     }
 
     .main h1 {
@@ -262,22 +271,18 @@
     .section {
         flex-direction: column;
         height: auto;
-        background-color: var(--branco);
-        padding: 40px 15px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     }
 
-    /* Oculta completamente o bloco azul no mobile */
     .bem_vindo {
         display: none;
     }
 
-    /* O formulário ocupa toda a largura disponível */
     .entrar_conta {
         width: 100%;
-        height: auto;
+        padding: 30px 10px;
     }
 
-    /* Mostra o botão de cadastro no mobile */
     .btn_mobile {
         display: flex;
     }
@@ -288,6 +293,84 @@
     }
 
     .esqueceu {
-        margin-top: 25px; /* Mantém o link com um bom espaçamento do botão amarelo */
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main h1 {
+        font-size: 26px;
+    }
+
+    .p1 {
+        font-size: 14px;
+    }
+
+    .entrar_conta h2 {
+        font-size: 22px;
+    }
+
+    .entrar {
+        font-size: 16px;
+    }
+
+    .escrever {
+        height: 48px;
+        margin-top: 20px;
+    }
+
+    .escrever input {
+        font-size: 16px;
+    }
+
+    .btn2, .btn_mobile {
+        width: 100%;
+        max-width: 286px;
+        height: 46px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main {
+        padding: 20px 10px;
+    }
+
+    .main h1 {
+        font-size: 22px;
+    }
+
+    .escrever img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .escrever input {
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .main {
+        padding: 20px 10px;
+    }
+
+    .section {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .bem_vindo {
+        display: none;
+    }
+
+    .entrar_conta {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .escrever {
+        margin-top: 15px;
     }
 }

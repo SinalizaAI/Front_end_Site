@@ -21,8 +21,8 @@ function Login() {
 
     try {
       const data = await loginCliente(email, senha);
-      salvarToken(data.token); // salva o JWT no localStorage
-      navigate("/pages/Usuario"); // redireciona para a home
+      salvarToken(data.token);
+      navigate("/pages/Usuario");
     } catch (err) {
       setErro(err.message);
     } finally {
