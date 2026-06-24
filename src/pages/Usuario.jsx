@@ -113,6 +113,9 @@ export default function UserProfile() {
         razaoSocial: formData.razaoSocial,
         email: formData.email,
         telefone: formData.telefone,
+        cidade: formData.cidade, // novo
+        pais: formData.pais, // novo
+        dataNascimento: formData.dataNascimento || null, // novo
       };
 
       await atualizarCliente(id, payload);
