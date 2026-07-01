@@ -122,6 +122,7 @@ function normalizarLandmarks(landmarks) {
     flat[i * 3 + 2] = escala > 0 ? centrado[i][2] / escala : centrado[i][2];
   }
   return flat;
+  
 }
 // ─────────────────────────────────────────────────────────────────────────────
 // Extração de landmarks para duas mãos → vetor de 126 valores
